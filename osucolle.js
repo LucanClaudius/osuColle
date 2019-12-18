@@ -84,7 +84,10 @@ Database.prototype.removeCollection = function (name) {
     return this;
 };
 
-Database.prototype.collection = function (name) {[]
+Database.prototype.collection = function (name) {
+    if (!this.collections[name])
+        throw TypeError("collection does not exist");
+
     return this.collections[name];
 }
 
@@ -144,13 +147,23 @@ Database.prototype.toBuffer = function () {
 /*
     Change the name of a collection
     @method
-    @param { string } name - New name for the collection
+    @param { string } oldName - Name of the collection to edit
+    @param { string } newName - New name for the collection
 */
-Collection.prototype.setName = function (name) {
-    if (!name || !typeof(name) === "String" || name == "" || name.length > 25)
+Database.prototype.changeCollectionName = function (oldName, newName) {
+    if (!newName || !typeof(newName) === "String" || newName == "" || newName.length > 25)
         throw TypeError("provide a name between 1 and 25 characters");
 
-    this.name = name;
+    if (oldName === newName)
+        throw TypeError("provided name is the same as current name");
+
+    if (!this.collections[oldName])
+        throw TypeError("collection does not exist");
+
+    this.collections[newName] = this.collections[oldName];
+    this.collections[newName].name = newName;
+
+    delete this.collections[oldName];
 
     return this;
 }
