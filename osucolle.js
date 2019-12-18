@@ -84,7 +84,7 @@ Database.prototype.removeCollection = function (name) {
     return this;
 };
 
-Database.prototype.collection = function (name) {
+Database.prototype.collection = function (name) {[]
     return this.collections[name];
 }
 
@@ -142,6 +142,20 @@ Database.prototype.toBuffer = function () {
 };
 
 /*
+    Change the name of a collection
+    @method
+    @param { string } name - New name for the collection
+*/
+Collection.prototype.setName = function (name) {
+    if (!name || !typeof(name) === "String" || name == "" || name.length > 25)
+        throw TypeError("provide a name between 1 and 25 characters");
+
+    this.name = name;
+
+    return this;
+}
+
+/*
     Add a beatmap hash to the collection
     @method
     @param { string } hash - MD5 hash of the beatmap to be added
@@ -175,7 +189,7 @@ Collection.prototype.removeBeatmap = function (hash) {
     Reads a buffer and converts it to a database object
     @method
 */
-Buffer.prototype.readCollection = function () {
+Buffer.prototype.readDatabase = function () {
     //create database and add non-repeated data
     let database = new Database();
     let head = headParser.parse(this);
