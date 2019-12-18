@@ -1,0 +1,22 @@
+{
+  "name": "osucolle",
+  "version": "1.0.0",
+  "description": "osu! Collection database editor, reader and creator",
+  "main": "osucolle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucanClaudius/osuColle.git"
+  },
+  "author": "Lucan Claudius",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LucanClaudius/osuColle/issues"
+  },
+  "homepage": "https://github.com/LucanClaudius/osuColle#readme",
+  "dependencies": {
+    "binary-parser-encoder": "^1.5.2"
+  }
+}
