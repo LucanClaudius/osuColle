@@ -84,6 +84,10 @@ Database.prototype.removeCollection = function (name) {
     return this;
 };
 
+Database.prototype.collection = function (name) {
+    return this.collections[name];
+}
+
 /*
     convert database to a stream of binary data, which can be saved to a .db file
     @method
