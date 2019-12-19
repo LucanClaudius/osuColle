@@ -1,7 +1,7 @@
 {
   "name": "osucolle",
   "version": "1.0.1",
-  "description": "osu! Collection database editor, reader and creator",
+  "description": "A simple node module to create, read and modify osu! beatmap collections",
   "main": "osucolle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/LucanClaudius/osuColle.git"
   },
+  "keywords": [
+    "osu",
+    "collection",
+    "editor",
+    "parser"
+  ],
   "author": "Lucan Claudius",
   "license": "MIT",
   "bugs": {
