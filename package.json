@@ -1,6 +1,6 @@
 {
   "name": "osucolle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "osu! Collection database editor, reader and creator",
   "main": "osucolle.js",
   "scripts": {
