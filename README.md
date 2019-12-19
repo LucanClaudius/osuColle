@@ -4,13 +4,13 @@ A simple node module to create, read and modify osu! beatmap collections.
 ## Installation
 This module is available as an npm package
 ```sh
-npm install osuColle
+npm install osucolle
 ```
 
 ## Usage
 ### Reading a database from a buffer.
 ```js
-const osuColle = require("osuColle");
+const osuColle = require("osucolle");
 const fs = require("fs");
 
 //read your database file
@@ -44,7 +44,7 @@ Result:
 
 Reading a single collection
 ```js
-const osuColle = require("osuColle");
+const osuColle = require("osucolle");
 const fs = require("fs");
 
 let buffer = fs.readFileSync("./collection.db");
@@ -71,7 +71,7 @@ Result:
 
 ### Creating a database
 ```js
-const osuColle = require("osuColle");
+const osuColle = require("osucolle");
 //construct a database
 const myDatabase = new osuColle.Database();
 
@@ -117,7 +117,7 @@ fs.writeFileSync("./collection.db", myBuffer);
 
 ### Modifying an existing database:
 ```js
-const osuColle = require("osuColle");
+const osuColle = require("osucolle");
 const myDatabase = new osuColle.Database();
 
 let collectionName = "My Collection";
