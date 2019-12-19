@@ -1,6 +1,4 @@
 # osuColle
-osu! Collection database editor, reader and creator
-# osuColle
 A simple node module to create, read and modify osu! beatmap collections.
 
 ## Installation
